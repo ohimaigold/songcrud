@@ -17,7 +17,7 @@ class Song(models.Model):
     title = models.CharField(max_length=100)
     date_released = models.DateField()
     likes = models.IntegerField()
-    artiste_id = models.ForeignKey(Artiste, on_delete=models.CASCADE)
+    artiste_id = models.ForeignKey(Artiste, related_name='Songs',  on_delete=models.CASCADE)
     def __str__(self):
         return f"{self.title}"
  
